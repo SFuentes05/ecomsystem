@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/theme-provider'
 import './css/style.css'
 
 import { Inter } from 'next/font/google'
@@ -19,11 +20,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${inter.variable} font-inter antialiased bg-zinc-950 text-zinc-100 tracking-tight`}>
-        <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-          {children}
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+          storageKey="theme"
+          forcedTheme="dark"
+        >
+          <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

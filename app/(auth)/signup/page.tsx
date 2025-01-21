@@ -5,6 +5,7 @@ export const metadata = {
 
 import Link from 'next/link'
 import AuthLogo from '../auth-logo'
+import { signup } from '../login/actions'
 
 export default function SignUp() {
   return (
@@ -23,32 +24,24 @@ export default function SignUp() {
         <form>
           <div className="space-y-4">
             <div>
-              <label className="block text-sm text-zinc-300 font-medium mb-1" htmlFor="company">Company <span className="text-rose-500">*</span></label>
-              <input id="company" className="form-input w-full" type="text" placeholder="mE.g., Acme Inc." required />
-            </div>
-            <div>
-              <label className="block text-sm text-zinc-300 font-medium mb-1" htmlFor="full-name">Full Name <span className="text-rose-500">*</span></label>
-              <input id="full-name" className="form-input w-full" type="text" placeholder="E.g., Mark Rossi" required />
-            </div>
-            <div>
               <label className="block text-sm text-zinc-300 font-medium mb-1" htmlFor="email">Email <span className="text-rose-500">*</span></label>
-              <input id="email" className="form-input w-full" type="email" placeholder="markrossi@company.com" required />
+              <input id="email" name="email" className="form-input w-full" type="email" placeholder="markrossi@company.com" required />
             </div>
             <div>
               <label className="block text-sm text-zinc-300 font-medium mb-1" htmlFor="password">Password <span className="text-rose-500">*</span></label>
-              <input id="password" className="form-input w-full" type="password" autoComplete="on" required />
+              <input id="password" name="password" className="form-input w-full" type="password" autoComplete="on" required />
             </div>
-            <div>
+            {/* <div>
               <label className="block text-sm text-zinc-300 font-medium mb-1" htmlFor="referrer">Where did you hear about us? <span className="text-rose-500">*</span></label>
               <select id="referrer" className="form-select text-sm py-2 w-full" required>
                 <option>Google</option>
                 <option>Medium</option>
                 <option>GitHub</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <div className="mt-6">
-            <button className="btn text-sm text-white bg-emerald-500 hover:bg-emerald-600 w-full shadow-sm group">
+            <button formAction={signup} className="btn text-sm text-white bg-emerald-500 hover:bg-emerald-600 w-full shadow-sm group">
               Sign Up <span className="tracking-normal text-emerald-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
             </button>
           </div>
@@ -56,7 +49,7 @@ export default function SignUp() {
 
         <div className="text-center mt-4">
           <div className="text-sm text-zinc-400">
-            Already have an account? <Link className="font-medium text-emerald-500 hover:text-emerald-400 transition duration-150 ease-in-out" href="/signin">Sign in</Link>
+            Already have an account? <Link className="font-medium text-emerald-500 hover:text-emerald-400 transition duration-150 ease-in-out" href="/login">Sign in</Link>
           </div>
         </div>
 

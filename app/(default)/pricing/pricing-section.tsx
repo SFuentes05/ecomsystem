@@ -3,6 +3,11 @@ import Particles from '@/components/particles'
 import Illustration from '@/public/images/page-illustration.svg'
 import Pricing from '@/components/pricing'
 
+export const metadata = {
+  title: 'Home - Dashboard',
+  description: 'Page description',
+}
+
 export default function PricingSection() {
   return (
     <section className="relative">

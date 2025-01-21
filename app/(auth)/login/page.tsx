@@ -5,8 +5,9 @@ export const metadata = {
 
 import Link from 'next/link'
 import AuthLogo from '../auth-logo'
+import { login, signup } from './actions'
 
-export default function SignIn() {
+export default function LoginPage() {
   return (
     <>
       {/* Page header */}
@@ -24,18 +25,18 @@ export default function SignIn() {
           <div className="space-y-4">
             <div>
               <label className="block text-sm text-zinc-300 font-medium mb-1" htmlFor="email">Email</label>
-              <input id="email" className="form-input w-full" type="email" required />
+              <input id="email" name="email" className="form-input w-full" type="email" required />
             </div>
             <div>
               <div className="flex justify-between">
                 <label className="block text-sm text-zinc-300 font-medium mb-1" htmlFor="password">Password</label>
                 <Link className="text-sm font-medium text-emerald-500 hover:text-emerald-400 transition duration-150 ease-in-out ml-2" href="/reset-password">Forgot?</Link>
               </div>
-              <input id="password" className="form-input w-full" type="password" autoComplete="on" required />
+              <input id="password" name="password" className="form-input w-full" type="password" autoComplete="on" required />
             </div>
           </div>
           <div className="mt-6">
-            <button className="btn text-sm text-white bg-emerald-500 hover:bg-emerald-600 w-full shadow-sm group">
+            <button formAction={login} className="btn text-sm text-white bg-emerald-500 hover:bg-emerald-600 w-full shadow-sm group">
               Sign In <span className="tracking-normal text-emerald-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
             </button>
           </div>

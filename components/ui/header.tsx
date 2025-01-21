@@ -18,7 +18,7 @@ export default function Header() {
 
             {/* Desktop menu links */}
             <ul className="flex grow justify-center flex-wrap items-center">
-              <li>
+              {/* <li>
                 <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/about">About</Link>
               </li>
               <li>
@@ -29,7 +29,7 @@ export default function Header() {
               </li>
               <li>
                 <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/customers">Customers</Link>
-              </li>
+              </li> */}
               <li>
                 <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/changelog">Changelog</Link>
               </li>
@@ -40,7 +40,7 @@ export default function Header() {
           {/* Desktop sign in links */}
           <ul className="flex-1 flex justify-end items-center">
             <li>
-              <Link className="font-medium text-sm text-zinc-300 hover:text-white whitespace-nowrap transition duration-150 ease-in-out" href="/signin">Sign in</Link>
+              <Link className="font-medium text-sm text-zinc-300 hover:text-white whitespace-nowrap transition duration-150 ease-in-out" href="/login">Sign in</Link>
             </li>
             <li className="ml-6">
               <Link className="btn-sm text-zinc-300 hover:text-white transition duration-150 ease-in-out w-full group [background:linear-gradient(theme(colors.zinc.900),_theme(colors.zinc.900))_padding-box,_conic-gradient(theme(colors.zinc.400),_theme(colors.zinc.700)_25%,_theme(colors.zinc.700)_75%,_theme(colors.zinc.400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-zinc-800/30 before:rounded-full before:pointer-events-none" href="/signup">

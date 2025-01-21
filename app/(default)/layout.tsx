@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
-
+import { useEffect, useState } from 'react'
+import { createClient } from '@/utils/supabase/client'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -13,6 +13,25 @@ export default function DefaultLayout({
 }: {
   children: React.ReactNode
 }) {  
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const supabase = createClient()
+
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser()
+      setIsLoggedIn(!!user)
+    }
+    
+    checkUser()
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsLoggedIn(!!session?.user)
+    })
+
+    return () => {
+      subscription.unsubscribe()
+    }
+  }, [])
 
   useEffect(() => {
     AOS.init({
@@ -25,15 +44,13 @@ export default function DefaultLayout({
 
   return (
     <>
-      <Header />
+      {!isLoggedIn && <Header />}
       
       <main className="grow">
-
         {children}
-
       </main>
 
-      <Footer />
+      {!isLoggedIn && <Footer />}
     </>
   )
 }
