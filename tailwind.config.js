@@ -107,7 +107,8 @@ module.exports = {
   			float: 'float 2s ease-in-out infinite',
   			'infinite-scroll': 'infinite-scroll 40s linear infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			shimmer: 'shimmer 2s linear infinite',
   		},
   		keyframes: {
   			endless: {
@@ -172,7 +173,11 @@ module.exports = {
   				to: {
   					height: 0
   				}
-  			}
+  			},
+  			shimmer: {
+  				'0%': { backgroundPosition: '200% 0' },
+  				'100%': { backgroundPosition: '-200% 0' },
+  			},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

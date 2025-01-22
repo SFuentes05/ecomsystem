@@ -45,6 +45,7 @@ export async function updateSession(request: NextRequest) {
      request.nextUrl.pathname === '/auth' ||
      request.nextUrl.pathname === '/pricing' ||
      request.nextUrl.pathname === '/confirm-email' ||
+     request.nextUrl.pathname === '/roadmap' ||
      request.nextUrl.pathname === '/signup')
   ) {
     const url = request.nextUrl.clone()
@@ -57,6 +58,7 @@ export async function updateSession(request: NextRequest) {
     !user &&
     request.nextUrl.pathname !== '/' &&
     request.nextUrl.pathname !== '/changelog' &&
+    request.nextUrl.pathname !== '/roadmap' &&
     !request.nextUrl.pathname.startsWith('/auth')
   ) {
     const url = request.nextUrl.clone()

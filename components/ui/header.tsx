@@ -22,14 +22,14 @@ export default function Header() {
                 <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/about">About</Link>
               </li>
               <li>
-                <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/integrations">Integrations</Link>
-              </li>
-              <li>
                 <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/pricing">Pricing</Link>
               </li>
               <li>
                 <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/customers">Customers</Link>
               </li> */}
+              <li>
+                <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/roadmap">30-Day Roadmap</Link>
+              </li>
               <li>
                 <Link className="font-medium text-sm text-zinc-300 hover:text-white mx-4 lg:mx-5 transition duration-150 ease-in-out" href="/changelog">Changelog</Link>
               </li>
